@@ -436,20 +436,20 @@ func (t *TrieRoot) FindTrie(IP string) (int, *net.IPNet, TrieData) {
     t.findTrieInt(&tv, 0, &ts)
 
     if ts.matchFound == true {
-		if t.v6 == false {
-			var res net.IP 
-        	for i := 0; i < 4; i++ {
-				res = append(res, ts.lastMatchTv.prefix[i])
-        	}
-			mask := net.CIDRMask(ts.lastMatchPfxLen, 32) 
-			ipnet := net.IPNet {IP: res, Mask: mask}
-        	return 0, &ipnet, ts.trieData
-		} else {
-			var res net.IP = ts.lastMatchTv.prefix[:]
-			mask := net.CIDRMask(ts.lastMatchPfxLen, 128) 
-			ipnet := net.IPNet {IP: res, Mask: mask}
-			return 0, &ipnet, ts.trieData
-		}
+        if t.v6 == false {
+            var res net.IP 
+            for i := 0; i < 4; i++ {
+                res = append(res, ts.lastMatchTv.prefix[i])
+            }
+            mask := net.CIDRMask(ts.lastMatchPfxLen, 32) 
+            ipnet := net.IPNet {IP: res, Mask: mask}
+            return 0, &ipnet, ts.trieData
+        } else {
+            var res net.IP = ts.lastMatchTv.prefix[:]
+            mask := net.CIDRMask(ts.lastMatchPfxLen, 128) 
+            ipnet := net.IPNet {IP: res, Mask: mask}
+            return 0, &ipnet, ts.trieData
+        }
     }
     return TRIE_ERR_NOENT, nil, 0
 }

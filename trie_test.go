@@ -131,8 +131,8 @@ func TestTrie(t *testing.T) {
         t.Errorf("failed to add %s:%d", route, data)
     }
 
-	// If we need to dump trie elements
-	// Run # go test -v .
+    // If we need to dump trie elements
+    // Run # go test -v .
     trieR.Trie2String(&tk)
 
     ret, ipn, rdata := trieR.FindTrie("192.41.3.1")
@@ -229,13 +229,13 @@ func TestTrie(t *testing.T) {
         t.Errorf("failed to find %s", "2001:db8::1")
     }
 
-	route = "2001:db8::1/128"
+    route = "2001:db8::1/128"
     res = trieR6.DelTrie(route)
     if res != 0 {
         t.Errorf("failed to del %s", route)
     }
 
-	route = "2001:db8::/32"
+    route = "2001:db8::/32"
     res = trieR6.DelTrie(route)
     if res != 0 {
         t.Errorf("failed to delete %s", route)
