@@ -1,6 +1,6 @@
 # Go lpm package 
 
-Tree-bitmap least prefix match (LPM) implementation in Go. The information about this algorithm can be found [here](https://cseweb.ucsd.edu/~varghese/PAPERS/willpaper.pdf) It supports both Ipv4/Ipv6 lookups and user-defined data types to be associated with prefixes
+Tree-bitmap least prefix match (LPM) implementation in GoLang. The information about this algorithm can be found [here](https://cseweb.ucsd.edu/~varghese/PAPERS/willpaper.pdf) It supports both Ipv4/Ipv6 lookups and user-defined data types to be associated with prefixes
 
 # How to use in your project 
 
